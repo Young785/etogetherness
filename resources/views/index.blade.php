@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>African Dating & Singles at etogetherness</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <script src="assets/js/bootstrap.min.js"></script>
+    <link href="/users/assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/users/assets/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="font-awesome/css/fontawesome-all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/practice.css">
+    <link rel="stylesheet" href="/users/css/practice.css">
     <script src="https://kit.fontawesome.com/0000000000.js" crossorigin="anonymous"></script>
 </head>
 <body>

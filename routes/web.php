@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::post('/password/send_reset_link', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('sendResetLinkEmail');
@@ -25,7 +25,7 @@ Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->nam
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/main', [App\Http\Controllers\HomeController::class, 'main'])->name('home');
 
 Auth::routes();
 
