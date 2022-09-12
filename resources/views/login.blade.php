@@ -6,16 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- site favicon -->
-	<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+	<link rel="icon" type="image/png" href="assets/images/favicon.png">
 	<!-- Place favicon.ico in the root directory -->
 
 	<!-- All stylesheet and icons css  -->
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/animate.css">
-	<link rel="stylesheet" href="/assets/css/all.min.css">
-	<link rel="stylesheet" href="/assets/css/swiper.min.css">
-	<link rel="stylesheet" href="/assets/css/lightcase.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/swiper.min.css">
+	<link rel="stylesheet" href="assets/css/lightcase.css" type="text/css">
+	<link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 
 </head>
 
@@ -94,9 +94,6 @@
         </div>
     </section>
     <!-- ================> login section end here <================== -->
-
-	
-	
 
 	<!-- All Needed JS -->
 	<script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>

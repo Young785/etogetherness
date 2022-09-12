@@ -12,7 +12,7 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.9)),url(../img/do.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6),rgb(20, 14, 50)),url(../img/mayur-gala-2PODhmrvLik-unsplash.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +21,6 @@ body{
 
 .contaner{
   background: white;
-  border-radius: 10px;
   position: relative;
   max-width: 900px;
   padding: 60px;
@@ -44,7 +43,9 @@ input[type="text"]{
   width: 100%;
   padding: 12px;
   resize: vertical;
-  
+  border-top: none;
+  border-left: none;
+  border-right: none;
   outline: none;
 }
 
@@ -52,7 +53,9 @@ input[type="Password"]{
   width: 100%;
   padding: 12px;
   resize: vertical;
-  
+  border-top: none;
+  border-left: none;
+  border-right: none;
   outline: none;
 }
 
@@ -78,11 +81,16 @@ input[type="submit"]{
   height: 45px;
   max-width: 300px;
   width: 100%;
-  background-color: #4070f4;
+  background-color: rgb(255, 1, 234);
   border: none;
   outline: none;
   color: #fff;
-  border-radius: 5px;
   margin: 25px 0;
   transition: 0.9s;
+}
+
+.contaner button:hover{
+  border: 1px solid rgb(255, 1, 234);
+  background: none;
+  color: rgb(255, 1, 234);
 }

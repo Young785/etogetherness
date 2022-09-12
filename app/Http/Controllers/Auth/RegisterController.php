@@ -53,10 +53,9 @@ class RegisterController extends Controller
             'looking_for.required' => 'Please click the gender you are interested in.',     
         ];
         return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'gender' => ['required', 'string', 'max:255'],
-            'looking_for' => ['required', 'string', 'max:255'],
-            'age' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:4'],
         ], $messages);
@@ -71,10 +70,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'first_name' => $data['first_name'],
+            'name' => $data['name'],
             'gender' => $data['gender'],
-            'looking_for' => $data['looking_for'],
-            'age' => $data['age'],
+            'phone' => $data['phone'],
+            'other_name' => $data['other_name'],
+            'nick_name' => $data['nick_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'remember_token' => Str::random(60)

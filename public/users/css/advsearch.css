@@ -1,0 +1,237 @@
+*{
+    font-family: 'Varela Round', sans-serif;
+}
+:root{
+    --main-bg-color: rgb(20, 14, 50);
+    --main-text-color: rgb(20, 14, 50);
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1efde;
+}
+
+.primary-text{
+    color: var(--main-text-color);
+}
+
+.second-text{
+    color: var(--second-text-color);
+}
+
+.primary-bg{
+    background-color: var(--main-bg-color);
+}
+
+.secondary-bg{
+    background-color: var(--second-bg-color);
+}
+
+.rounded-full{
+    border-radius: 100%;
+}
+
+#wrapper{
+    overflow: hidden;
+    background-image: linear-gradient(
+        to right,
+        rgb(194, 190, 212),
+        rgb(255, 255, 255),
+        rgb(255, 255, 255),
+        rgb(255, 255, 255)
+    );
+}
+
+#sidebar-wrapper{
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading{
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group{
+    width :15rem;
+
+}
+
+#page-content-wrapper{
+    min-height: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+    margin-left: 0;
+}
+
+#menu-toggle{
+    cursor: pointer;
+}
+
+.list-group-item{
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item.active{
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+
+@media (min-width: 768px){
+    #sidebar-wrapper{
+        margin-left: 0;
+    }
+
+    #page-content-wrapper{
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper{
+        margin-left: -15rem;
+    }
+}
+
+
+  
+  .container{
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    margin: 0 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+  .container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .container form{
+    position: relative;
+    min-height: 490px;
+    margin-top: 16px;
+    background-color: #f2f2f2;
+    padding: 5px;
+  }
+  
+  .container form .details{
+    margin-top: 10px;
+  }
+  
+  .container form .details.ID{
+    margin-top: 10px;
+  }
+  
+  .container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+  }
+  .container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+  }
+  .input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+  }
+  
+  .input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    height: 40px;
+    margin: 8px 0;
+  }
+  
+  .input-field select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    height: 40px;
+    margin: 8px 0;
+    margin-down: 5px;
+  }
+  
+  .input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+  }
+  
+  .input-field select:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+  }
+  
+  .input-field input[type="date"]{
+    color: #707070;
+  }
+  
+  .input-field input[type="date"]:valid{
+    color: #333;
+  }
+  
+  .container form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    background-color: #4070f4;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    transition: 0.9s;
+  }
+  
+  .container form button:hover{
+    background: black;
+  }
+  
+  @media(max-width: 700px) {
+    .container form{
+      overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+      display: none;
+    }
+    form .fields .input-field{
+      display: flex;
+      width: calc(100% / 2 - 15px);
+    }
+  }
+  
+  @media(max-width: 550px){
+    form .fields .input-field{
+      display: flex;
+      width: 100%;
+    }
+  }

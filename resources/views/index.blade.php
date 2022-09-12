@@ -22,7 +22,7 @@
     <!--video-->
     <!--video-->
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="back-video">
-      <source src="pexels-askar-abayev-6200804.mp4" type="video/mp4">
+      <source src="/users/pexels-askar-abayev-6200804.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
 
@@ -46,11 +46,11 @@
             </li>-->
   
             <li class="nav-item">
-              <a class="nav-link" href="#">LOG IN</a>
+              <a class="nav-link" href="/login">LOG IN</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT</a>
+              <a class="nav-link" href="/about">ABOUT</a>
             </li>    
           </ul>
           
@@ -71,33 +71,54 @@
         </div>
   <!-- flex form-->
   <div class="hi">
-    <form class="form" action="" method="post">
+    <form action="/register" method="post">
+      @csrf
       <p>SIGN UP FOR FREE</p>
         <div class="path">
             <label> First Name: </label>
-            <input type="text" name="name" value="">
-        </div><br>
+            <input type="text" name="name" value="{{ old("name")}}" >
+            <p class="error-msg">{{ $errors->first("name")}}</p>
+        </div>
 
         <div class="path">
           <label for=""> Other Names: </label>
-          <input type="text" name="" value="">
-        </div><br>
+          <input type="text" name="other_name" value="{{ old("other_name")}}" >
+          <p class="error-msg">{{ $errors->first("other_name")}}</p>
+        </div>
 
-      <div class="path">
-        <label for="">Nickname: </label>
-        <input type="text" name="" value="">
-      </div><br>
+        <div class="path">
+          <label for="">Nickname: </label>
+          <input type="text" name="nick_name" value="{{ old("nick_name")}}">
+          <p class="error-msg">{{ $errors->first("nick_name")}}</p>
+        </div>
+        
+        <div class="path">
+          <label for=""> Gender: </label>
+          <select name="gender" class="form-control" id="">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <p class="error-msg">{{ $errors->first("gender")}}</p>
+        </div>
 
       <div class="path">
               <label for="">Email:</label>
-              <input type="text" name="password" value="">
-      </div><br>
+              <input type="text" name="email" value="{{ old("email")}}">
+            <p class="error-msg">{{ $errors->first("email")}}</p>
+      </div>
 
       <div class="path">
             <label for="">Phone Number:</label>
-            <input type="text" name="password" value="">
-      </div><br>
-
+            <input type="number" name="phone" value="{{ old("phone")}}">
+            <p class="error-msg">{{ $errors->first("phone")}}</p>
+      </div>
+      
+      <div class="path">
+          <label for="">Password:</label>
+          <input type="password" name="password">
+          <p class="error-msg">{{ $errors->first("password")}}</p>
+    </div>
+  
       <div class="roll">
           <button name="submit" id="btn" >Sign Up</button>
       </div>
@@ -107,36 +128,76 @@
 
   </div>
   
-  
+  <section class="container-md name" style="
+  padding: 50px 50px;
+">
+  <div class="flirt">
+    <div class="love" style="margin-right: 30px;border: 2px solid #140e32;padding: 5px;">
+      <img src="https://img.freepik.com/free-photo/couple-love-focus-hands-lovers-love-concept_1150-7224.jpg" alt="" style="
+  width: 500px;
+">
+    </div>
 
+    <div class="love">
+      <div class="text just">
+      <h4 style="
+  text-transform: uppercase;
+  font-size: 30px;
+">Are you looking for a partner?</h4>
+      <p style="
+  color: #7d7b7b;
+">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae laboriosam, nobis laborum sequi veniam adipisci.
+        Since 2002, etogetherness has connected thousands of African singles around the world, making it the largest and most trusted African dating site. With a remarkable member base of over 4.5 million (and growing), we connect thousands of single men and women internationally.
+      </p>
+    </div>
+    </div>
+  </div>
+</section>
 
-      <section class="my-5">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card-body">
-              <h5 class="card-title">Why Choose etogetherness?</h5>
-              <p class="card-text">
+<div class="back" style="
+padding: 50px 50px;
+">
+<section class="container-md mane">
+    <div class="container-md flirt">
+        <div class="love">
+            <div class="text">
+                <h4>Why Choose us?</h4>
+                <p style="
+color: #7d7b7b;
+">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae laboriosam, nobis laborum sequi veniam adipisci.
                 Since 2002, etogetherness has connected thousands of African singles around the world, making it the largest and most trusted African dating site. With a remarkable member base of over 4.5 million (and growing), we connect thousands of single men and women internationally.
-              </p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae laboriosam, nobis laborum sequi veniam adipisci.
+                Since 2002, etogetherness has connected thousands of African singles around the world, making it the largest and most trusted African dating site. With a remarkable member base of over 4.5 million (and growing), we connect thousands of single men and women internationally.
+                
+                </p>
             </div>
         </div>
+        <div class="love" style="margin-left: 30px;border: 2px solid #140e32;padding: 5px;">
+<img src="https://c.tadst.com/gfx/750w/lovers-day-fun1.jpg" alt="" style="
+width: 500px;
+">
+</div>
+    </div>
+</section>
+</div>
 
-        <div class="col">
-            <div class="card-body">
-              <h5 class="card-title">International African Dating - Trusted By Over 4.5 Million Singles</h5>
-              <p class="card-text">
-                etogetherness is part of the well-established Cupid Media network that operates over 30 reputable niche dating sites. With a commitment to connecting singles worldwide, we bring Africa to you.<br /><br />Our membership base is made up of over 4.5 million singles from USA, UK, Germany, France, Kenya, Cameroon, South Africa Nigeria, Ghana, Madagascar, Cote d'Ivoire and many more African countries. We are committed to helping you find the perfect match, no matter where in the world you may be.
-              </p>
-            </div>
+<section class="container-md name" style="
+    padding: 50px 50px;
+">
+      <div class="flirt">
+        <div class="love" style="margin-right: 30px;border: 2px solid #140e32;padding: 5px;">
+        <img src="https://femina.wwmindia.com/content/2019/dec/couple21576824515.jpg" "="" alt="" style="
+    width: 500px;
+">
+      </div>
+
+        <div class="love">
+          <div class="text">
+          <h4>Why Choose us?</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae laboriosam, nobis laborum sequi veniam adipisci.
+            Since 2002, etogetherness has connected thousands of African singles around the world, making it the largest and most trusted African dating site. With a remarkable member base of over 4.5 million (and growing), we connect thousands of single men and women internationally.
+          </p>
         </div>
-
-      <div class="col">
-            <div class="card-body">
-              <h5 class="card-title">Start Your Success Story On etogetherness</h5>
-              <p class="card-text">
-                As the leader in African dating, we successfully bring together singles from around the world. For over 10 years, thousands of happy men and women have met their soul mates on etogetherness and have shared their stories with us. Check out the many success stories here.<br /><br /> For a fun, safe and uniquely African dating experience, join free today.
-              </p>
-            </div>
         </div>
       </div>
     </section>
@@ -146,19 +207,19 @@
         <div class="container row my-2">
             <h4> Members Who Have Found Love </h4>
           <div class="col">
-            <img src="img/down.jpg" alt="">
+            <img src="/users/img/down.jpg" alt="">
             <p class="my-4">"I can boldly say I found my soulmate on etogetherness. I am from Ghana and he’s from the USA."</p>
             <dd>Amidal</dd>
           </div>
   
           <div class="col">
-            <img src="img/image.jpg" alt="">
+            <img src="/users/img/image.jpg" alt="">
             <p class="my-4">"We found a lasting love...Thank <br/>you etogetherness❤"</p><br/>
             <dd>Farouk</dd>
           </div>
   
           <div class="col">
-            <img src="img/image2.jpg" alt="">
+            <img src="/users/img/image2.jpg" alt="">
             <p class="my-4">""He's the best thing that ever happened to me and I love him so so much"</p>
             <dd>Joey</dd>
           </div>
@@ -177,19 +238,19 @@
             <h4> How It Works</h4>
             <p>Get started on etogetherness.com today in 3 simple steps:</p>
           <div class="col">
-            <img src="img/images.jpg" alt="">
+            <img src="/users/img/images.jpg" alt="">
             <h6 class="my-4">Create A Profile</h6>
             <p >Create your profile in seconds with our easy sign-up. Don't forget to add a photo!</p>
           </div>
   
           <div class="col" style="background-size: cover; background-position: center;">
-            <img src="img/coup.jpg" alt="">
+            <img src="/users/img/coup.jpg" alt="">
             <h6 class="my-4">Browse Photos</h6>
             <p>Search our large member base with ease, with a range of preferences and settings.</p><br/>
           </div>
   
           <div class="col">
-            <img src="img/couple.jpg" alt="">
+            <img src="/users/img/couple.jpg" alt="">
             <h6 class="my-4">Start Communicating</h6>
             <p>"Send a message or interest to start communicating with members. It's your time to shine</p>
           </div>

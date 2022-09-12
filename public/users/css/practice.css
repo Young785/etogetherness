@@ -7,7 +7,7 @@
 
 .hero{
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7), rgb(20, 14, 50));
     position: relative;
   }
@@ -29,14 +29,28 @@
   /*float: right;*/
   background: white;
   max-width: 700px;
-  padding: 60px;
+  padding: 30px 40px;
   margin: 0 15px;
   box-shadow: 0 2px 2px rgb(255, 1, 234);
   color: black;
   width: 35%;
 }
 
+.flirt{
+  display: flex;
+  padding: 40px;
+}
 
+.text{
+  padding-top: 40px;
+}
+.just{
+  
+}
+
+.back{
+  background: rgb(243 242 249);
+}
 .lap{
   padding-top: 15%;
   display: inline-block;
@@ -142,6 +156,18 @@ input[type="password"]{
     .flex-container{
       flex-direction: column;
     }
+
+    .flirt{
+      flex-direction: column;
+      text-align: justify; 
+    }
+
+    .love img{
+      align-items: center;
+      height: auto;
+      width: 100%;
+    }
+    
 }
 
 @media(max-width: 700px){
