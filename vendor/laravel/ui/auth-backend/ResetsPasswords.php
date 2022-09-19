@@ -28,7 +28,7 @@ trait ResetsPasswords
     {
         $token = $request->route()->parameter('token');
 
-        return view('new_password')->with(
+        return view('auth.passwords.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }
@@ -70,8 +70,7 @@ trait ResetsPasswords
         return [
             'token' => 'required',
             'email' => 'required|email',
-            'password' => ['required', Rules\Password::defaults()],
-            'confirm_password' => ['required', 'same:password', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
     }
 

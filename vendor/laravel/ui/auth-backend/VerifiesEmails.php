@@ -21,7 +21,7 @@ trait VerifiesEmails
     {
         return $request->user()->hasVerifiedEmail()
                         ? redirect($this->redirectPath())
-                        : view('users.verify_email');
+                        : view('auth.verify');
     }
 
     /**
@@ -30,7 +30,7 @@ trait VerifiesEmails
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      *
-     * @throws \Illuminate\Auth\Access\Authoriz ationException
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function verify(Request $request)
     {
