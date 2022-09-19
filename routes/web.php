@@ -49,10 +49,6 @@ Route::prefix("/user")->middleware("auth")->group(function () {
 Auth::routes();
 Route::get('/advance_search', [App\Http\Controllers\UserController::class, 'advSearch'])->name('advSearch');
 
-
-Route::get('/advance_search', [App\Http\Controllers\UserController::class, 'advSearch'])->name('advSearch');
-
-
 Route::get('/main', [App\Http\Controllers\HomeController::class, 'main'])->name('home');
 
 Auth::routes();
