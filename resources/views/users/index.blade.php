@@ -37,7 +37,7 @@
                     <p><input type="text" name="country" placeholder="Any country"></p>
                 </div>
                 <div class="col">
-                    <label>State/Provine</label>
+                    <label>State/Province</label>
                     <p><input type="text" name="state" placeholder="Any State"></p>
                 </div>
                 <div class="col">
@@ -87,7 +87,7 @@
                         <div class="icons" style="display: flex; justify-content:space-between;">
                             <i class="fa-regular fa-heart"></i>
                             <span>
-                                <a href="{{ route('message_user', $user->user_secid) }}" class="text-dark">
+                                <a href="{{ route('oneUserMessage', $user->user_secid) }}" class="text-dark">
                                     <i class="fa-regular fa-message"></i>
                                 </a>
                             </span>

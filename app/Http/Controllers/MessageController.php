@@ -31,6 +31,15 @@ class MessageController extends Controller
         $messages =  MessageChat::where("receiver_id", $receiver->id)->where("sender_id", $id)
             ->orWhere("receiver_id", $id)->where("sender_id", $receiver->id)
             ->orderBy("created_at", "asc")->get();
+        return view('users.message', compact("messages", "receiver"));
+    }
+    public function oneUserMessage(Request $request, $coming_rec_id)
+    {
+        $id = Auth::user()->id;
+        $receiver = User::where("user_secid", $coming_rec_id)->first();
+        $messages =  MessageChat::where("receiver_id", $receiver->id)->where("sender_id", $id)
+            ->orWhere("receiver_id", $id)->where("sender_id", $receiver->id)
+            ->orderBy("created_at", "asc")->get();
         return view('users.messages', compact("messages", "receiver"));
     }
     // public function messages()

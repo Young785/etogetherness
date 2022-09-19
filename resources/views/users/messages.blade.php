@@ -28,95 +28,15 @@
                 </div>
             </div>
         </div>
-        <style>
-            .middle {
-                height: 100%;
-                overflow-y: scroll;
-            }
-            .incoming {
-                height: 100%;
-                padding: 5px 20px;
-                width: 70%;
-            }
-            .incoming .bubble {
-                background: #8f8e8e;
-            }
-
-            .bubble {
-                position: relative;
-                display: inline-block;
-                margin-bottom: 5px;
-                color: #F9FBFF;
-                font-size: 0.7em;
-                padding: 10px 10px 10px 12px;
-                border-radius: 20px;
-            }
-            .outgoing {
-                float: right;
-                padding: 5px 20px;
-                right: 0;
-                width: 70%;
-            }
-            .outgoing .bubble {
-                background: #261b5e;
-                float: right;
-            }
-            .bubble {
-                position: relative;
-                display: inline-block;
-                margin-bottom: 5px;
-                color: #F9FBFF;
-                font-size: 0.7em;
-                padding: 10px 10px 10px 12px;
-                border-radius: 20px;
-            }
-            .typing {
-                position: absolute;
-                top: 67%;
-                left: 20px;
-            }
-        </style>
         <div class="chat-history">
             <div class="middle pt-1">
                 <div class="voldemort">
-                    @foreach ($messages as $message)
-                        @if ($message->receiver_id != $receiver->id)
-                            <div class="incoming">
-                                <div class="bubble">{{ $message->messages }}</div>
-                            </div>
-                        @else
-                            <div class="outgoing">
-                                <div class="bubble">{{ $message->messages }}</div>
-                              </div>
-                        @endif
-                    @endforeach
-                    <div class="typing">
-                        <div class="bubble">
-                        <div class="ellipsis one"></div>
-                        <div class="ellipsis two"></div>
-                        <div class="ellipsis three"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-        <hr class="m-2">
-        <div class="chat-input">
-            <form id="sendNewMessage" class="m-0 p-0 w-100 rounded-0" data-id="{{ $receiver->user_secid }}">
-                <div id="message-box" class="px-3">
-                    <div class="col-lg-10">
-                        <input type="text" id="message_text" placeholder="Type a message..." name="message" class="px-3">
-                    </div>
-                    <button class="col-lg-2 btn btn-default p-0 sendbtn" disabled="" title="Send Message">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <div class="chat-actions">
+        <div class="chat-actions d-none">
             <div class="positioning-container-chat-actions">
-                <div class="actions">
+                <div class="actions d-flex col-lg-12 px-3 pt-2">
                     <div class="action">
                         <i class="fas fa-image"></i>
                     </div>
@@ -131,6 +51,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <hr class="m-2">
+        <div class="chat-input">
+            <form id="sendNewMessage" class="m-0 p-0 w-100 rounded-0" data-id="{{ $receiver->user_secid }}">
+                <div id="message-box" class="px-1">
+                    <button class="col-lg-2 btn btn-default p-0 addFiles" title="Add Files" type="button">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="col-lg-8">
+                        <input type="text" id="message_text" placeholder="Type a message..." name="message" class="px-3" style="">
+                    </div>
+                    <button class="col-lg-2 btn btn-default p-0 sendbtn" title="Send Message" disabled="disabled">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -162,69 +98,91 @@
 </script> --}}
 
 <script>
+    $(".addFiles").click(function () {
+        const chatActions = document.querySelector('.chat-actions');
+        if(!chatActions.matches(".d-none")){
+            $(".chat-actions").addClass("d-none");
+        }else{
+            $(".chat-actions").removeClass("d-none");
+        }
+    });
     $("#message_text").keyup(function () {
-    if($(this).val() == ""){
-      $(".sendbtn").attr("disabled", true)
-    }else{
-      $(".sendbtn").attr("disabled", false)
-    }
-  });
-  $("#sendNewMessage").submit(function (e) {
-    e.preventDefault();
-    var inputs = new FormData(this);
-    var id = $(this).data("id");
-    var form = $(this);
-    $.ajax({
-        url: '/user/message/'+id,
-        method: "POST", 
-        cache: false,
-        contentType: false,
-        processData: false,
-        async: false,
+        if($(this).val() == ""){
+            $(".sendbtn").attr("disabled", true)
+        }else{
+            $(".sendbtn").attr("disabled", false)
+        }
+    });
+    $("#sendNewMessage").submit(function (e) {
+        e.preventDefault();
+        var inputs = new FormData(this);
+        var id = $(this).data("id");
+        var form = $(this);
+        $.ajax({
+            url: '/user/message/'+id,
+            method: "POST", 
+            cache: false,
+            contentType: false,
+            processData: false,
+            async: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: inputs,
+            success: function(response) {
+                // var response = JSON.parse(result);
+                if(response.status == "success"){
+                    $(".sendbtn").attr("disabled", true)
+                    document.getElementById("sendNewMessage").reset();
+                    getMessagesFunc(id)
+                }else{
+                    $(".sendbtn").attr("disabled", true)
+                    toastr.options.timeOut = 10000;
+                    toastr.error(response.message);
+                }
+            }
+        });
+    });
+    
+    function getMessageFunc(id)
+    {
+        $.ajax({
+        url: '/user/get-messages',
+        method: "GET",
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        data: inputs,
+        // data: image,
         success: function(response) {
-            // var response = JSON.parse(result);
-            if(response.status == "success"){
-                $(".sendbtn").attr("disabled", true)
-                document.getElementById("sendNewMessage").reset();
-                getMessagesFunc(id)
-            }else{
-                $(".sendbtn").attr("disabled", true)
-                toastr.options.timeOut = 10000;
-                toastr.error(response.message);
-            }
+            getMessagesFunc(id)
         }
-    });
-  });
-  function getMessagesFunc(id)
-  {
-    $.ajax({
-      url: '/user/messages/'+id,
-      method: "GET",
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      // data: image,
-      success: function(response) {
-        $('#message_display').html(response)
-      }
-    });
-  }
-  function getMessageFunc(id)
-  {
-    $.ajax({
-      url: '/user/get-messages',
-      method: "GET",
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      // data: image,
-      success: function(response) {
-        getMessagesFunc(id)
-      }
-    });
-  }
+        });
+    }
+    $(document).ready(function(){
+        getMessagesFunc();
+        setInterval(function () {
+            getMessagesFunc()
+        }, 5000);
+    })
+    // window.onload = getMessagesFunc;
+
+    
+    function getMessagesFunc()
+        {
+            var url = (window.location).href;
+            var id = url.split('/').pop();
+        console.log(id)
+        $.ajax({
+        url: '/user/message/'+id,
+        method: "GET",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        // data: image,
+        success: function(response) {
+            $('.voldemort').html(response)
+        }
+        });
+    }
+        
 </script>

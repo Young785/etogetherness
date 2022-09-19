@@ -105,9 +105,9 @@ body {
 
 .chat-history {
 	width: 100%;
-    height: 74%;
-	background-color: #fff;
-	transition: all 300ms ease-in-out;
+    height: 79%;
+    background-color: #fff;
+    transition: all 300ms ease-in-out;
 }
 
 .chat-input {
@@ -129,9 +129,8 @@ body {
 }
 
 .chat-input input {
-	width: 72%;
 	height: 25px;
-	position: absolute;
+	position: relative;
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
@@ -144,20 +143,19 @@ body {
 
 .chat-actions {
 	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 7.5%;
-	background-color: #fff;
-	transition: all 300ms ease-in-out;
+    bottom: 0;
+    width: 100%;
+    height: 16.5%;
+    background-color: #fff;
+    transition: all 300ms ease-in-out;
 }
 
 .positioning-container-chat-actions {
 	position: relative;
-	top: 0;
-	left: 50%;
-	transform: translate(-50%, 0);
-	width: 85%;
-	height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
 }
 
 .actions {
@@ -168,12 +166,12 @@ body {
 
 .action {
 	display: inline-block;
-	cursor: pointer;
-	margin-right: 10px;
+    cursor: pointer;
+    width: 40px;
 }
 
 .action i {
-	color: rgb(0, 0, 0, 0.5);
+	color: rgb(20 14 50) !important;
 	font-size: 24px;
 	transition: all 300ms ease-in-out;
 }

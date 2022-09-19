@@ -3,6 +3,33 @@
 	<script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script>
+        $(document).ready(function(){
+            getMessagesFunc();
+            setInterval(function () {
+                getMessagesFunc()
+            }, 5000);
+        })
+        // window.onload = getMessagesFunc;
+
+        
+        function getMessagesFunc()
+            {
+                var url = (window.location).href;
+                var id = url.split('/').pop();
+            console.log(id)
+            $.ajax({
+            url: '/user/message/'+id,
+            method: "GET",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            // data: image,
+            success: function(response) {
+                $('.voldemort').html(response)
+            }
+            });
+        }
+        
         var el = document.getElementById("wrapper")
         var toggleButton = document.getElementById("menu-toggle")
 

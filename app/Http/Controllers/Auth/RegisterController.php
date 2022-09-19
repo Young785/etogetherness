@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
 class RegisterController extends Controller
 {
     /*
@@ -49,11 +49,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'looking_for.required' => 'Please click the gender you are interested in.',     
+        ];
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'gender' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'password' => ['required', 'string', 'min:4'],
+        ], $messages);
     }
 
     /**
@@ -66,9 +71,14 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'gender' => $data['gender'],
+            'phone' => $data['phone'],
+            'other_name' => $data['other_name'],
+            'nick_name' => $data['nick_name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
             'user_secid' => rand(),
+            'password' => Hash::make($data['password']),
+            'remember_token' => Str::random(60)
         ]);
     }
 }

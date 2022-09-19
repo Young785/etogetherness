@@ -13,3 +13,55 @@
     display: flex;
     position: relative;
 }
+.middle {
+    height: 100%;
+    overflow-y: scroll;
+    transform: rotate(180deg);
+    text-align: left;
+}
+.voldemort {
+    overflow: hidden;
+    transform: rotate(180deg);
+}
+.incoming {
+    height: 100%;
+    padding: 5px 20px;
+    width: 100%;
+}
+.incoming .bubble {
+    background: #8f8e8e;
+}
+
+.bubble {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #F9FBFF;
+    font-size: 0.7em;
+    padding: 10px 10px 10px 12px;
+    border-radius: 20px;
+}
+.outgoing {
+    float: right;
+    padding: 5px 20px;
+    right: 0;
+    width: 100%;
+}
+.outgoing .bubble {
+    background: #261b5e;
+    float: right;
+}
+.bubble {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #F9FBFF;
+    font-size: 0.7em;
+    padding: 10px 10px 10px 12px;
+    border-radius: 20px;
+}
+.typing {
+    position: absolute;
+    top: 67%;
+    left: 20px;
+}
