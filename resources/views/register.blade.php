@@ -70,43 +70,31 @@
                                 @csrf
                                 <h4 class="content-title">Acount Details</h4>
                                 <div class="form-group">
-                                    <label>First Name*</label>
+                                    <label>Fullname*</label>
                                     <input type="text" class="my-form-control" value="{{ old("first_name")}}" name="first_name" placeholder="Enter Your Name">
                                     <p class="error-msg">{{ $errors->first("first_name")}}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label>I am a*</label>
-                                    <div class="banner__inputlist">
-                                        <div class="s-input me-3">
-                                            <input type="radio" name="gender" value="{{ old("gender") ?? "male" }}" id="male"><label for="male">Male</label>
-                                        </div>
-                                        <div class="s-input">
-                                            <input type="radio" name="gender" value="{{ old("gender") ?? "female" }}" id="female"><label for="female">Female</label>
-                                        </div>
-                                    </div>
-                                    <p class="error-msg">{{ $errors->first("gender")}}</p>
+                                    <label>Nickname*</label>
+                                    <input type="text" class="my-form-control" value="{{ old("nick_name")}}" name="nick_name" placeholder="Enter Your Name">
+                                    <p class="error-msg">{{ $errors->first("nick_name")}}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label>Looking for a*</label>
-                                    <div class="banner__inputlist">
-                                        <div class="s-input me-3">
-                                            <input type="radio" name="looking_for" value="{{ old("looking_for") ?? "male"}}" id="males"><label for="males">Male</label>
-                                        </div>
-                                        <div class="s-input">
-                                            <input type="radio" name="looking_for" value="{{ old("looking_for") ?? "female" }}" id="females"><label for="females">Female</label>
-                                        </div>
-                                    </div>
-                                    <p class="error-msg">{{ $errors->first("looking_for")}}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label>Birthday*</label>
-                                    <select class="my-form-control" name="age" value="{{ old("age")}}" id="age_no">
+                                    <label>Gender*</label>
+                                    <select name="gender" id="" class="my-form-control">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
                                     </select>
-                                    <p class="error-msg">{{ $errors->first("age")}}</p>
+                                    <p class="error-msg">{{ $errors->first("gender")}}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address*</label>
                                     <input type="email" class="my-form-control" value="{{ old("email")}}" name="email" placeholder="Enter Your Email">
+                                    <p class="error-msg">{{ $errors->first("email")}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number*</label>
+                                    <input type="phone" class="my-form-control" value="{{ old("phone")}}" name="phone" placeholder="Enter Your phone">
                                     <p class="error-msg">{{ $errors->first("email")}}</p>
                                 </div>
                                 <div class="form-group">

@@ -1,4 +1,5 @@
 @include('users.includes.header')
+<link rel="stylesheet" href="/users/css/profile.css">
 <div class="btn btn-danger">
     <p>Your email address {{ $user->email }} has not been verified. Please click here to verify it.</p>
   </div>
@@ -6,14 +7,14 @@
   <div class="btn btn-success">
     <h3>Why verify my profile?</h3>
     <p>Confirm your identity and show others your profile is genuine. Get the<br/> "verified" badge on your profile by uploading your identification</p>
-    <button id="verify_now_btn" class="btn">verify now</button>
+    <button id="verify_now_btn" class="btn">Verify Now</button>
   </div>
 
   <div class="holding-container">
     <div>
       <div class="image">
         <div class="image2">
-          <img src="img/avi.jpeg" alt="">
+          <img src="/users/img/avi.jpeg" alt="">
         </div>
       </div>
     </div>
@@ -27,7 +28,7 @@
       <!-- message iconn-->
       <i class="fa-solid fa-user" style="font-size: 1em;"></i>
       <i class="fa solid fa-circle" style="font-size: .5em; color: green;"></i>
-      <i class="fa-solid fa-pen" style="font-size: 1em;"></i>
+      <i class="fa-solid fa-pen" style="font-size: 1em;"></i> 
     </h4>
       </span>
       <p>{{ ''.$user->city.' '.$user->state.' '.$user->country }}</p>

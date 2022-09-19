@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->enum('gender', ["male", "female"]);
             $table->enum('looking_for', ["male", "female"]);
-            $table->string('other_name');
+            // $table->string('other_name');
             $table->string('nick_name');
             $table->string('phone');
             $table->string('city')->nullable();
@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('user_secid');
             $table->enum('user_type', ["user", "admin"])->default("user");
             $table->rememberToken();
             $table->timestamps();

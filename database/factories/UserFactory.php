@@ -35,6 +35,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => Hash::make("password"), // password
             'user_type' => "user",
+            'user_secid' => rand(),
             'online_status' => "1",
             'last_seen' => now(),
             'other_name' => $this->faker->name(),

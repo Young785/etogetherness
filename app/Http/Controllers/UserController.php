@@ -12,16 +12,15 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-
-    public function index()
-    {
-        $users = User::get();
-        return view('users.index', compact("users"));
-    }
     
     public function profile()
     {
         $user = User::where("id", Auth::user()->id)->first();
         return view('users.profile', compact("user"));
+    }
+    public function advSearch()
+    {
+        // $user = User::where("id", Auth::user()->id)->first();
+        return view('users.advance_search');
     }
 }

@@ -27,7 +27,7 @@ class HomeController extends Controller
         if(Auth::user()->user_type == "admin"){
             return redirect('/admin');
         }elseif(Auth::user()->user_type == "user"){
-            return redirect('/users');
+            return redirect('/user');
         }
     }
 }

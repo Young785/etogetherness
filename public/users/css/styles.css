@@ -1,0 +1,15 @@
+.btn-default{
+    background: rgb(20, 14, 50) !important;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    /* width: 15%   ; */
+    color: white;
+}
+#message-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
