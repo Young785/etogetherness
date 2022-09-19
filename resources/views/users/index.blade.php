@@ -56,7 +56,7 @@
      
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="grid-container">
             @foreach ($users as $user)
                 <div class="grid-item">
@@ -86,7 +86,11 @@
                         
                         <div class="icons" style="display: flex; justify-content:space-between;">
                             <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-message"></i>
+                            <span>
+                                <a href="{{ route('message_user', $user->user_secid) }}" class="text-dark">
+                                    <i class="fa-regular fa-message"></i>
+                                </a>
+                            </span>
                             <i class="fa-solid fa-camera"></i>
                         </div>
                     </div>

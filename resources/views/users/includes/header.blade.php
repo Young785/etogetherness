@@ -36,7 +36,7 @@
             <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
                 <i class="fas fa-project-diagram me-2"></i>Matches
             </a>
-            <a href="/user/advance_search" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+            <a href="{{ route('advSearch') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
                 <i class="fas fa-chart-line me-2"></i>Search
             </a>
             <a href="{{ route('messages') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
