@@ -3,7 +3,7 @@
         <img src="https://static.vecteezy.com/packs/media/vectors/term-bg-1-666de2d9.jpg" class="text-center rounded-circle" width="50">
     </div>
     <div class="text-center">
-        <b class="m-1 text-grey h6 font-weight-bold">Ayomikun</b>
+        <b class="m-1 text-grey h6 font-weight-bold">{{ $receiver->name }}</b>
         <p class="m-1 text-muted">Lives in {{ $receiver->city }}, {{ $receiver->country }}</p>
         <p class="m-0 text-muted">7/20/20, 4:26 PM</p>
     </div>

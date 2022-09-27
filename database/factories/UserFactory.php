@@ -23,7 +23,7 @@ class UserFactory extends Factory
             'gender' => "female",
             'looking_for' => "male",
             'phone' => $this->faker->phoneNumber(),
-            'other_name' => $this->faker->name(),
+            // 'other_name' => $this->faker->name(),
             'city' => $this->faker->city(),
             'state' => $this->faker->state(),
             'country' => $this->faker->country(),
@@ -38,7 +38,6 @@ class UserFactory extends Factory
             'user_secid' => rand(),
             'online_status' => "1",
             'last_seen' => now(),
-            'other_name' => $this->faker->name(),
             'remember_token' => Str::random(10),
         ];
     }

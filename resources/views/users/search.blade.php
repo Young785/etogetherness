@@ -1,8 +1,11 @@
 @include('users.includes.header')
     <link rel="stylesheet" href="/users/css/dashboard.css">
     @if (Auth::user()->email_verified_at == null)
-        <div class="btn btn-danger">
-            <p>Your email address johndoe@gmail.com has not been verified. Please click here to verify it.</p>
+        <div class="btn btn-danger pt-3">
+            <p class="h6">Your email address <strong class="text-decoration-underline">{{ Auth::user()->email }}</strong> has not been verified.
+                 Please click the button below to verify it.
+            </p>
+            <a class="btn btn-default" href="{{ route('verify_email')}}">Verify Now</a>
         </div>
     @endif
 

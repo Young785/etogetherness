@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->enum('gender', ["male", "female"]);
-            $table->enum('looking_for', ["male", "female"]);
+            $table->enum('looking_for', ["male", "female"])->nullable();
             // $table->string('other_name');
             $table->string('nick_name');
             $table->string('phone');

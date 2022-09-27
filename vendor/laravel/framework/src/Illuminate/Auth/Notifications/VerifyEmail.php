@@ -26,6 +26,7 @@ class VerifyEmail extends Notification
     public static $toMailCallback;
 
     /**
+     * @return $this
      * Get the notification's channels.
      *
      * @param  mixed  $notifiable
@@ -45,11 +46,10 @@ class VerifyEmail extends Notification
     public function toMail($notifiable)
     {
         $verificationUrl = $this->verificationUrl($notifiable);
-
+        // dd($notifiable);
         if (static::$toMailCallback) {
             return call_user_func(static::$toMailCallback, $notifiable, $verificationUrl);
         }
-
         return $this->buildMailMessage($verificationUrl);
     }
 
@@ -61,11 +61,14 @@ class VerifyEmail extends Notification
      */
     protected function buildMailMessage($url)
     {
-        return (new MailMessage)
-            ->subject(Lang::get('Verify Email Address'))
-            ->line(Lang::get('Please click the button below to verify your email address.'))
-            ->action(Lang::get('Verify Email Address'), $url)
-            ->line(Lang::get('If you did not create an account, no further action is required.'));
+        return (new MailMessage)->view('vendor.notifications.verify_email', ['url' => $url]);
+        // return (new MailMessage)->markdown('vendor.notifications.password_reset_email')->with(['url' => $this->verificationUrl(auth()->user())]);
+        
+        // return (new MailMessage)
+        //     ->subject(Lang::get('Verify Email Address'))
+        //     ->line(Lang::get('Please click the button below to verify your email address.'))
+        //     ->action(Lang::get('Verify Email Address'), $url)
+        //     ->line(Lang::get('If you did not create an account, no further action is required.'));
     }
 
     /**

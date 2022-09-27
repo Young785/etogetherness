@@ -71,8 +71,8 @@
                                 <h4 class="content-title">Acount Details</h4>
                                 <div class="form-group">
                                     <label>Fullname*</label>
-                                    <input type="text" class="my-form-control" value="{{ old("first_name")}}" name="first_name" placeholder="Enter Your Name">
-                                    <p class="error-msg">{{ $errors->first("first_name")}}</p>
+                                    <input type="text" class="my-form-control" value="{{ old("name")}}" name="name" placeholder="Enter Your Name">
+                                    <p class="error-msg">{{ $errors->first("name")}}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Nickname*</label>
@@ -95,7 +95,7 @@
                                 <div class="form-group">
                                     <label>Phone Number*</label>
                                     <input type="phone" class="my-form-control" value="{{ old("phone")}}" name="phone" placeholder="Enter Your phone">
-                                    <p class="error-msg">{{ $errors->first("email")}}</p>
+                                    <p class="error-msg">{{ $errors->first("phone")}}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Password*</label>

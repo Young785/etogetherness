@@ -77,7 +77,7 @@
                                   <a class="" href="http://etogetherness.test" style="mso-line-height-rule:
  exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color:
  #f57153; font-weight: normal; text-decoration: none" target="_blank" title="">
-                                    <img align="center" alt="Forgot your password?" class="mcnImage" src="https://static.lingoapp.com/assets/images/email/il-password-reset@2x.png" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; outline: none;
+                                    <img align="center" alt="Verify your password?" class="mcnImage" src="https://static.lingoapp.com/assets/images/email/il-password-reset@2x.png" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; outline: none;
  text-decoration: none; vertical-align: bottom; max-width:1200px; padding-bottom:
  0; display: inline !important; vertical-align: bottom;" width="600"></img>
                                   </a>
@@ -116,13 +116,13 @@
                                 <h1 class="null" style='color: #2a2a2a; font-family: "Asap", Helvetica,
  sans-serif; font-size: 32px; font-style: normal; font-weight: bold; line-height:
  125%; letter-spacing: 2px; text-align: center; display: block; margin: 0;
- padding: 0'><span style="text-transform:uppercase">Forgot</span></h1>
+ padding: 0'><span style="text-transform:uppercase">Verify</span></h1>
 
 
                                 <h2 class="null" style='color: #2a2a2a; font-family: "Asap", Helvetica,
  sans-serif; font-size: 24px; font-style: normal; font-weight: bold; line-height:
  125%; letter-spacing: 1px; text-align: center; display: block; margin: 0;
- padding: 0'><span style="text-transform:uppercase">your password?</span></h2>
+ padding: 0'><span style="text-transform:uppercase">your account?</span></h2>
 
                               </td>
                             </tr>
@@ -148,7 +148,7 @@
  -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word;
  color: #2a2a2a; font-family: "Asap", Helvetica, sans-serif; font-size: 16px;
  line-height: 150%; text-align: center; padding-top:9px; padding-right: 18px;
- padding-bottom: 9px; padding-left: 18px;' valign="top">Not to worry, we got you! Let’s get you a new password. Click the link below.
+ padding-bottom: 9px; padding-left: 18px;' valign="top">Thanks for joining the amazing plaform. Please click the button below to verify your account.
                                 <br></br>
                               </td>
                             </tr>
@@ -183,12 +183,12 @@
  exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
  font-family: 'Asap', Helvetica, sans-serif; font-size: 16px; padding-top:24px;
  padding-right:48px; padding-bottom:24px; padding-left:48px;" valign="middle">
-                                        <a class="mcnButton " href="{{ url($url)}}" style="mso-line-height-rule: exactly;
+                                        <a class="mcnButton " href="{{ $url }}" style="mso-line-height-rule: exactly;
  -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; display: block; color: #f57153;  
  font-weight: normal; text-decoration: none; font-weight: normal;letter-spacing:
  1px;line-height: 100%;text-align: center;text-decoration: none;color:
  #FFFFFF; text-transform:uppercase;" target="_blank" title="Review ETogetherness kit
- invitation">Reset password</a>
+ invitation">Verify Now</a>
                                       </td>
                                     </tr>
                                   </tbody>
