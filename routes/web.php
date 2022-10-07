@@ -33,6 +33,14 @@ Route::prefix("/user")->middleware("auth")->group(function () {
     Route::get('/search', [App\Http\Controllers\DashboardController::class, 'search'])->name('search');
     Route::get('/profile', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
     Route::get('/advance_search', [App\Http\Controllers\UserController::class, 'advSearch'])->name('advSearch');
+    
+    Route::get('/advance_search', [App\Http\Controllers\UserController::class, 'advSearch'])->name('advSearch');
+    Route::get('/matches', [App\Http\Controllers\UserController::class, 'matches'])->name('matches');
+    Route::get('/activities', [App\Http\Controllers\UserController::class, 'activities'])->name('activities');
+    Route::get('/packages', [App\Http\Controllers\UserController::class, 'packages'])->name('packages');
+    Route::get('/account-settings', [App\Http\Controllers\UserController::class, 'accountSettings'])->name('account.settings');
+    Route::get('/advance_search', [App\Http\Controllers\UserController::class, 'advSearch'])->name('advSearch');
+
     Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
         $request->fulfill();
      
@@ -45,7 +53,6 @@ Route::prefix("/user")->middleware("auth")->group(function () {
     Route::get('/messages/{id}', [App\Http\Controllers\MessageController::class, 'oneUserMessage'])->name('oneUserMessage');
     Route::get('/message/{id}', [App\Http\Controllers\MessageController::class, 'message_user'])->name('message_user');
     Route::post('/message/{id}', [App\Http\Controllers\MessageController::class, 'sendMessage'])->name('sendMessage');
-
 });
 
 Auth::routes();

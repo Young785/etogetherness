@@ -1,4 +1,5 @@
 @include('users.includes.header')
+@include('users.includes.sidebar')
 <link rel="stylesheet" href="/users/css/advsearch.css">
         <div class="container ">
             <header>Advanced Search</header>

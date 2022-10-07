@@ -1,14 +1,12 @@
 @include('users.includes.header')
+@include('users.includes.sidebar')
 <link rel="stylesheet" href="/users/css/profile.css">
-<div class="btn btn-danger">
-    <p>Your email address {{ $user->email }} has not been verified. Please click here to verify it.</p>
+@if (Auth::user()->email_verified_at == null)
+  <div class="btn btn-danger pt-3">
+    <p class="h6">Your email address <strong class="text-decoration-underline">{{ Auth::user()->email }}</strong> has not been verified. Please click the button below to verify it.</p>
+    <a class="btn btn-default" href="{{ route('verify_email')}}">Verify Now</a>
   </div>
-
-  <div class="btn btn-success">
-    <h3>Why verify my profile?</h3>
-    <p>Confirm your identity and show others your profile is genuine. Get the<br/> "verified" badge on your profile by uploading your identification</p>
-    <button id="verify_now_btn" class="btn">Verify Now</button>
-  </div>
+@endif
 
   <div class="holding-container">
     <div>

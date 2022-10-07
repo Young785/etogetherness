@@ -1,7 +1,7 @@
 @include('users.includes.header')
+@include('users.includes.sidebar')
 <link rel="stylesheet" href="/users/css/chatbox.css">
 <link rel="stylesheet" href="/users/css/dashboard.css">
-
 <div class="container">
     <div class="chatbox">
         <div class="bar">
@@ -71,10 +71,6 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <a href="{{ request()->screen_type == 'mobile') ? '/user/register?screen_type=mobile' : '/user/register' }}"
-                            class="cmn--btn">@lang(@$section->content->btn_name) <span class="round-effect">
-                                <i class="fas fa-long-arrow-alt-right"></i>
-                            </span></a>
                     <div class="carousel-inner appendData">
 
                     </div>

@@ -1,4 +1,5 @@
 @include('users.includes.header')
+@include('users.includes.sidebar')
     <link rel="stylesheet" href="/users/css/dashboard.css">
     @if (Auth::user()->email_verified_at == null)
         <div class="btn btn-danger pt-3">

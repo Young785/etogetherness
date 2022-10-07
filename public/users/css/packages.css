@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+nav{
+    background: rgb(20, 14, 50);
+}
+
+.nav-item a{
+    color: white;
+}
+.box{
+    background: rgb(221, 221, 221);
+    height: 150px;
+    text-align: center;
+    width: 100%;
+}
+
+.text{
+    text-align: justify-center;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 3%;
+}
+.row{
+    padding-top: 5%;
+}
+
+.col-sm-3{   
+    justify-content: space-between;
+}
+
+.hey{
+    font-size: 20px;
+}

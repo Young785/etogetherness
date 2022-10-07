@@ -1,4 +1,5 @@
 @include('users.includes.header')
+@include('users.includes.sidebar')
 <link rel="stylesheet" href="/users/css/dashboard.css">
         <nav class="navbar navbar-expand-lg">
             <div class="container-md">

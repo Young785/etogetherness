@@ -1,9 +1,6 @@
 .btn-default{
     background: rgb(20, 14, 50) !important;
     outline: none;
-    border-radius: 100%;
-    width: 8%;
-    height: 25px;
     color: white;
 }
 #message-box {
