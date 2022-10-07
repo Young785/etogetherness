@@ -1,10 +1,9 @@
 .btn-default{
     background: rgb(20, 14, 50) !important;
-    border: none;
     outline: none;
-    border-radius: 5px;
-    padding: 10px;
-    /* width: 15%   ; */
+    border-radius: 100%;
+    width: 8%;
+    height: 25px;
     color: white;
 }
 #message-box {
@@ -28,10 +27,48 @@
     padding: 5px 20px;
     width: 100%;
 }
-.incoming .bubble {
+.incoming-bubble {
     background: #8f8e8e;
+    border-top-left-radius: 0.125rem !important;
+    border-top-right-radius: 10px !important;
+    max-width: 70%;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #F9FBFF;
+    font-size: 0.7em;
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 10px;
 }
-
+.incoming-bubble:before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -5px;
+    border-left: 0px !important;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #8f8e8e;
+}
+#img-content {
+    height: 50px;
+    width: 60px;
+    right: 6px;
+    top: 0;
+}
+.displayImage {
+    width: 60px;
+}
+.removeImg{
+    position: relative;
+    right: 4px;
+    cursor: pointer;
+    color:#787878 !important;
+    bottom: 60px;
+}
+.removeImg i{
+    font-size: 15px !important;
+}
 .bubble {
     position: relative;
     display: inline-block;
@@ -39,6 +76,7 @@
     color: #F9FBFF;
     font-size: 0.7em;
     padding: 10px 10px 10px 12px;
+    max-width: 70%;
     border-radius: 20px;
 }
 .outgoing {
@@ -46,19 +84,29 @@
     padding: 5px 20px;
     right: 0;
     width: 100%;
+    max-width: 100%;
 }
 .outgoing .bubble {
     background: #261b5e;
     float: right;
+    padding: 6px;
+    font-size: 14px;
 }
 .bubble {
     position: relative;
-    display: inline-block;
     margin-bottom: 5px;
-    color: #F9FBFF;
     font-size: 0.7em;
-    padding: 10px 10px 10px 12px;
-    border-radius: 20px;
+    color: #fff;
+    border-top-right-radius: 0.125rem !important;
+    border-radius: 10px;
+}
+.bubble:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -4px;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #261a5d;
 }
 .typing {
     position: absolute;

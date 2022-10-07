@@ -140,16 +140,24 @@ body {
 	font-size: 16px;
 	transition: all 300ms ease-in-out;
 }
-
+.chat-uploaded-img{
+	width: 100%;
+	cursor: pointer;
+	height: 230px;
+	border-radius: 5px;
+}
+.carousel-img {
+	height: auto;
+    max-height: 500px;
+}
 .chat-actions {
 	position: absolute;
     bottom: 0;
     width: 100%;
-    height: 16.5%;
+	height: 22.5%;
     background-color: #fff;
     transition: all 300ms ease-in-out;
 }
-
 .positioning-container-chat-actions {
 	position: relative;
     top: 0;
@@ -160,18 +168,20 @@ body {
 
 .actions {
 	position: absolute;
+	background: #efefef;
 	top: 0;
 	left: 0;
 }
 
 .action {
 	display: inline-block;
-    cursor: pointer;
-    width: 40px;
+    position: relative;
+    width: 100%;
+	height: auto;
 }
 
 .action i {
-	color: rgb(20 14 50) !important;
+	color: rgb(20 14 50);
 	font-size: 24px;
 	transition: all 300ms ease-in-out;
 }

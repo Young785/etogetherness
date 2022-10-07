@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="font-6/css/all.css">
     <link rel="stylesheet" href="/users/css/styles.css">
+    <link rel="stylesheet" href="/users/css/carousel.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
 
 </head>

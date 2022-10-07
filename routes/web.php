@@ -40,7 +40,8 @@ Route::prefix("/user")->middleware("auth")->group(function () {
     })->middleware(['auth', 'signed'])->name('verification.verify');
     Route::get('/verify-account', [App\Http\Controllers\Auth\VerificationController::class, 'show'])->name('verify_email');
     Route::post('/resend/verify-account', [App\Http\Controllers\Auth\VerificationController::class, 'resend'])->name('resend.verify_email');
-    Route::get('/messages', [App\Http\Controllers\MessageController::class, 'messages'])->name('messages')->middleware("under-construction");
+    Route::get('/messages', [App\Http\Controllers\MessageController::class, 'messages'])->name('messages');
+    Route::get('/messages/get-images/{id}', [App\Http\Controllers\MessageController::class, 'getImage'])->name('getImage');
     Route::get('/messages/{id}', [App\Http\Controllers\MessageController::class, 'oneUserMessage'])->name('oneUserMessage');
     Route::get('/message/{id}', [App\Http\Controllers\MessageController::class, 'message_user'])->name('message_user');
     Route::post('/message/{id}', [App\Http\Controllers\MessageController::class, 'sendMessage'])->name('sendMessage');
